@@ -1,0 +1,38 @@
+<!-- Include jQuery from a host-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>addClass demo</title>
+  <style>
+  p {
+    margin: 8px;
+    font-size: 16px;
+  }
+  .selected {
+    color: blue;
+  }
+  .highlight {
+    background: yellow;
+  }
+  </style>
+     
+    <!--This example loads jquery in the <head>. 
+    Although we can put it in the body, this makes 
+    sure that the jquery script will be loaded.-->  
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
+    </head>
+
+<body>
+ 
+<p>Hello</p>
+<p>and</p>
+<p>Goodbye</p>
+ 
+<script>
+$( "p" ).last().addClass( "selected" );
+</script>
+ 
+</body>
+</html>

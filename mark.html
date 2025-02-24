@@ -1,0 +1,56 @@
+<!--
+* @name: Assignement1
+* @Course Code: SODV1201
+* @class: Software Development Diploma program.
+* @author: Heather-may Rebecca Howse
+-->
+
+<!--Mark to Grade Converter Page-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">    
+    <!-- Include any necessary libraries -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
+    <script src="main.js"></script>
+
+    <!--host jQuery-->
+    <!--<script src="jquery.js"></script>-->
+    
+    <title>Mark Page</title>
+</head>
+
+<body>
+    
+<header role="banner" id="top">
+    <div id="header-text">
+      <h1><strong id="top-title">Mark</strong></h1>
+    </div>
+    
+<nav class="menu">
+    <ul>
+        <li><a href="index.html">Profile</a></li>
+        <li><a class="active" href="#mark.html">Mark</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li><a href="weather.html">Weather</a></li>
+      </ul>
+    </nav>
+    </header>
+
+    <label for="mark-input-box">Enter your mark:</label>
+    <input type="text" id="mark-input-box">
+    <button onclick="MarkToGrade()">Submit</button><!--use MarkToGrade function-->
+    
+    <p id="validation-message" style="color: red;"></p>
+    <p id="grade-result"></p>
+
+    <footer>
+        <div id="footer"> &copy; 2025 Heather-may Rebecca Howse. All rights reserved.</div>
+    </footer>
+    
+    </body>
+</html>
+    

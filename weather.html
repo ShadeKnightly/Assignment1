@@ -1,0 +1,64 @@
+<!--
+* @name: Assignement1
+* @Course Code: SODV1201
+* @class: Software Development Diploma program.
+* @author: Heather-may Rebecca Howse
+-->
+
+<!--Weather Page-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">    
+    <!-- Include any necessary libraries -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
+    <script src="main.js"></script>
+
+    <!--host jQuery-->
+    <!--<script src="jquery.js"></script>-->
+  
+    <title>Weather Page</title>
+
+</head>
+
+<body>
+
+<header role="banner" id="top">
+    <div id="header-text">
+      <h1><strong id="top-title">weather</strong></h1>
+    </div>
+
+<nav class="menu">
+<ul>
+    <li><a href="index.html">Profile</a></li>
+    <li><a href="mark.html">Mark</a></li>
+    <li><a href="staff.html">Staff</a></li>
+    <li><a class="active" href="#weather.html">Weather</a></li>
+  </ul>
+</nav>
+
+</header>
+    
+<!--Use the concept of JavaScript named and anonymous function
+create a program that can accept a temperature input in degrees Fahrenheit
+-->
+
+<label for="fahrenheit">Enter Temperature (degrees F):</label>
+<input type="number" id="fahrenheit" placeholder="Enter Fahrenheit">
+<button id="toCelsius">Convert to Celsius</button>
+<button id="toKelvin">Convert to Kelvin</button>
+<div id="result-container">
+    <p id="result">Result will be displayed here</p>
+</div>
+
+<footer>
+    <div id="footer"> &copy; 2025 Heather-may Rebecca Howse. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
+    
