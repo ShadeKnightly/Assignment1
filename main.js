@@ -79,6 +79,9 @@ function MarkToGrade() {
     }
 }
 
+
+/*display list of staff information with sorting capability by name and salary*/
+
 var dataSet = [   
     [ "Brielle Williamson", "Integration Specialist", "New York", "4804", "2012/12/02", "$372,000" ],
     [ "Herrod Chandler", "Sales Assistant", "San Francisco", "9608", "2012/08/06", "$137,500" ],
@@ -118,20 +121,27 @@ var dataSet = [
     [ "Unity Butler", "Marketing Designer", "San Francisco", "5384", "2009/12/09", "$85,675" ]
 ];
 
+
+//Define the Staff Data and store the details as array of objects 
 function loadTableData() {
     var tableBody = document.getElementById("staffTable");
-    tableBody.innerHTML = "";
-    dataSet.forEach(function (row) {
+    tableBody.innerHTML = ""; //cleaer table content for new data
+    //loop through the dataSet array, create a new row (<tr>element) for each sub-array
+    dataSet.forEach(function (row) { 
         var tr = document.createElement("tr");
+        //iterates over each item (cell) in each row.
         row.forEach(function (cell) {
-            var td = document.createElement("td");
+            var td = document.createElement("td"); //creates a new table cell (<td> element) for each cell.
             td.textContent = cell;
-            tr.appendChild(td);
+            tr.appendChild(td); // adds the table cell (<td>) element to (<tr>) element 
+            //(new cell becomes child element of row)
         });
-        tableBody.appendChild(tr);
+        tableBody.appendChild(tr); //append the row to the table body
     });
 }
 
+
+//sort the array based on salary
 function sortTable(columnIndex) {
     if (columnIndex === 5) {  
         dataSet.sort(function (a, b) {
@@ -144,9 +154,10 @@ function sortTable(columnIndex) {
             return a[columnIndex].localeCompare(b[columnIndex]);
         });
     }
-    loadTableData();
+    loadTableData();//display sorted table
 }
 
+//sort the array based on salary
 function sortSalary() {
     var sortOrder = document.getElementById("sortOrder").value;
     if (sortOrder === "firstName" || sortOrder === "lastName") {
@@ -156,13 +167,17 @@ function sortSalary() {
             return nameA.localeCompare(nameB);
         });
     } else {
+
+        //Sort dataSet array by salary
+        //Converts the cleaned string into a floating-point number using parseFloat(), so they can be compared numerically.
+        //Removes dollar signs ($) and commas (,) using .replace(/[$,]/g, "").
         dataSet.sort(function (a, b) {
-            var valA = parseFloat(a[5].replace(/[$,]/g, ""));
-            var valB = parseFloat(b[5].replace(/[$,]/g, ""));
-            return sortOrder === "asc" ? valA - valB : valB - valA;
+            var valA = parseFloat(a[5].replace(/[$,]/g, "")); //Extracts values from index 5 of sub-array a[5]
+            var valB = parseFloat(b[5].replace(/[$,]/g, "")); //Extracts values from index 5 of sub-array b[5]
+            return sortOrder === "asc" ? valA - valB : valB - valA; // compares valA and valB, sorts into ascending (valA-valB)/descending order(valB-ValA)
         });
     }
-    loadTableData();
+    loadTableData(); //display sorted table
 }
 
 function filterTable() {
